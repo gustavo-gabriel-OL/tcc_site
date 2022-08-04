@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('.btn-save').click(function(e) {
         e.preventDefault()
 
-        let dados = $('#form-comprador').serialize()
+        let dados = $('#form-cartao').serialize()
 
         dados += `&operacao=${$('.btn-save').attr('data-operation')}`
 
@@ -12,17 +12,17 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: dados,
-            url: 'src/comprador/modelo/save-comprador.php',
+            url: 'src/cartao/modelo/save-cartao.php',
             success: function(dados) {
                 Swal.fire({
-                    title: 'TOP-RIFAS',
+                    title: 'FacilitaBus',
                     text: dados.mensagem,
                     icon: dados.tipo,
                     confirmButtonText: 'OK'
                 })
 
-                $('#modal-comprador').modal('hide')
-                $('#table-comprador').DataTable().ajax.reload()
+                $('#modal-cartao').modal('hide')
+                $('#table-cartao').DataTable().ajax.reload()
             }
         })
     })

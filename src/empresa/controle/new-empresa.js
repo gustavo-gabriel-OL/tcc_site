@@ -5,19 +5,19 @@ $(document).ready(function() {
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-title').append('Adicionar novo Comprador')
+        $('.modal-title').append('Adicionar novo empresa')
 
-        $('.modal-body').load('src/comprador/visao/form-comprador.html')
+        $('.modal-body').load('src/empresa/visao/form-empresa.html')
 
         $('.btn-save').show()
 
         $('.btn-save').attr('data-operation', 'insert')
 
-        $('#modal-comprador').modal('show')
+        $('#modal-empresa').modal('show')
     })
 
     $('.close, #close').click(function(e) {
         e.preventDefault()
-        $('#modal-comprador').modal('hide')
+        $('#modal-empresa').modal('hide')
     })
 })

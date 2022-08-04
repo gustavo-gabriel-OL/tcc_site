@@ -22,7 +22,7 @@
         if($operacao == 'insert'){
             // Prepara o comando INSERT para ser executado
             try{
-                $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME, CELULAR) VALUES (:a, :b)');
+                $stmt = $pdo->prepare('INSERT INTO EMPRESA (NOME, CELULAR) VALUES (:a, :b)');
                 $stmt->execute(array(
                     ':a' => $requestData['NOME'], 
                     ':b' => $requestData['CELULAR']
@@ -40,7 +40,7 @@
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
-                $stmt = $pdo->prepare('UPDATE COMPRADOR SET NOME = :a, CELULAR = :b WHERE ID = :id');
+                $stmt = $pdo->prepare('UPDATE EMPRESA SET NOME = :a, CELULAR = :b WHERE ID = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
                     ':a' => $requestData['NOME'],

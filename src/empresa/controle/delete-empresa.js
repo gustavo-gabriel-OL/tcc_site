@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#table-comprador').on('click', 'button.btn-delete', function(e) {
+    $('#table-empresa').on('click', 'button.btn-delete', function(e) {
 
         e.preventDefault()
 
@@ -21,16 +21,16 @@ $(document).ready(function() {
                     dataType: 'json',
                     assync: true,
                     data: ID,
-                    url: 'src/comprador/modelo/delete-comprador.php',
+                    url: 'src/empresa/modelo/delete-empresa.php',
                     success: function(dados) {
                         Swal.fire({
-                            title: 'TOP-RIFAS',
+                            title: 'FacilitaBus',
                             text: dados.mensagem,
                             icon: dados.tipo,
                             confirmButtonText: 'OK'
                         })
 
-                        $('#table-comprador').DataTable().ajax.reload()
+                        $('#table-empresa').DataTable().ajax.reload()
                     }
                 })
             }

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#table-comprador').on('click', 'button.btn-edit', function(e) {
+    $('#table-cartao').on('click', 'button.btn-view', function(e) {
 
         e.preventDefault()
 
@@ -16,20 +16,20 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: ID,
-            url: 'src/comprador/modelo/view-comprador.php',
+            url: 'src/cartao/modelo/view-cartao.php',
             success: function(dado) {
                 if (dado.tipo == "success") {
-                    $('.modal-body').load('src/comprador/visao/form-comprador.html', function() {
+                    $('.modal-body').load('src/cartao/visao/form-cartao.html', function() {
                         $('#NOME').val(dado.dados.NOME)
+                        $('#NOME').attr('readonly', 'true')
                         $('#CELULAR').val(dado.dados.CELULAR)
-                        $('#ID').val(dado.dados.ID)
+                        $('#CELULAR').attr('readonly', 'true')
                     })
-                    $('.btn-save').removeAttr('data-operation', 'insert')
-                    $('.btn-save').show()
-                    $('#modal-comprador').modal('show')
+                    $('.btn-save').hide()
+                    $('#modal-cartao').modal('show')
                 } else {
                     Swal.fire({
-                        title: 'TOP-RIFAS',
+                        title: 'FacilitaBus',
                         text: dado.mensagem,
                         type: dado.tipo,
                         confirmButtonText: 'OK'

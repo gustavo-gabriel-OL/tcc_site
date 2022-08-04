@@ -10,7 +10,7 @@
     $colunas = $requestData['columns'];
 
     //Preparar o comando sql para obter os dados da categoria
-    $sql = "SELECT ID, NOME, CELULAR FROM COMPRADOR WHERE 1=1 ";
+    $sql = "SELECT ID, NOME, CELULAR FROM CARTAO WHERE 1=1 ";
 
     //Obter o total de registros cadastrados
     $resultado = $pdo->query($sql);
