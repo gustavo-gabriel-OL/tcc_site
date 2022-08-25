@@ -4,6 +4,8 @@ $(document).ready(function() {
 
         e.preventDefault()
 
+        // Alterar as informações do modal para apresentação dos dados
+
         $('.modal-title').empty()
         $('.modal-body').empty()
 
@@ -24,14 +26,38 @@ $(document).ready(function() {
                         $('#NOME').attr('readonly', 'true')
                         $('#CELULAR').val(dado.dados.CELULAR)
                         $('#CELULAR').attr('readonly', 'true')
+                        $('#LOGIN').val(dado.dados.LOGIN)
+                        $('#LOGIN').attr('readonly', 'true')
+                        $('#SENHA').val(dado.dados.SENHA)
+                        $('#SENHA').attr('readonly', 'true')
+                        $('#TIPO_ID').empty()
+
+                        var TIPO_ID = dado.dados.TIPO_ID
+
+                        //Consultar todos os tipos cadastrados no banco de daods
+                        $.ajax({
+                            dataType: 'json',
+                            type: 'POST',
+                            assync: true,
+                            url: 'src/tipo/modelo/all-tipo.php',
+                            success: function(dados) {
+                                for (const result of dados) {
+                                    if (result.ID == TIPO_ID) {
+                                        $('#TIPO_ID').append(`<option value="${result.ID}">${result.NOME}</option>`)
+                                    }
+
+                                }
+                            }
+                        })
+
                     })
                     $('.btn-save').hide()
                     $('#modal-usuario').modal('show')
                 } else {
-                    Swal.fire({
-                        title: 'FacilitaBus',
-                        text: dado.mensagem,
-                        type: dado.tipo,
+                    Swal.fire({ // Inicialização do SweetAlert
+                        title: 'FacilitaBus', // Título da janela SweetAler
+                        text: dado.mensagem, // Mensagem retornada do microserviço
+                        type: dado.tipo, // usuario de retorno [success, info ou error]
                         confirmButtonText: 'OK'
                     })
                 }

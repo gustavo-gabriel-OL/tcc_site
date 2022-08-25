@@ -7,13 +7,13 @@ $(document).ready(function() {
         let ID = `ID=${$(this).attr('id')}`
 
         Swal.fire({
-            title: 'TOP-RIFAS',
-            text: 'Deseja realmente excluir esse registro?',
+            title: 'FacilitaBus',
+            text: "Deseja realmente excluir esse registro?",
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Sim',
             cancelButtonText: 'Não'
-        }).then((result => {
+        }).then((result) => {
             if (result.value) {
 
                 $.ajax({
@@ -33,8 +33,9 @@ $(document).ready(function() {
                         $('#table-usuario').DataTable().ajax.reload()
                     }
                 })
-            }
-        }))
 
+
+            }
+        })
     })
 })

@@ -18,14 +18,17 @@
         $ID = isset($requestData['ID']) ? $requestData['ID'] : '';
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
 
-        // Verifica se é para cadastra um nvo registro
+        // Verifica se é para cadastrar um novo registro
         if($operacao == 'insert'){
             // Prepara o comando INSERT para ser executado
             try{
-                $stmt = $pdo->prepare('INSERT INTO USUARIO (NOME, CELULAR) VALUES (:a, :b)');
+                $stmt = $pdo->prepare('INSERT INTO USUARIO (NOME, CELULAR, LOGIN, SENHA, TIPO_ID) VALUES (:a, :b, :c, :d, :e)');
                 $stmt->execute(array(
-                    ':a' => $requestData['NOME'], 
-                    ':b' => $requestData['CELULAR']
+                    ':a' => $requestData['NOME'],
+                    ':b' => $requestData['CELULAR'],
+                    ':c' => $requestData['LOGIN'],
+                    ':d' => md5($requestData['SENHA']),
+                    ':e' => $requestData['TIPO_ID']
                 ));
                 $dados = array(
                     "tipo" => 'success',
@@ -40,11 +43,14 @@
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
-                $stmt = $pdo->prepare('UPDATE USUARIO SET NOME = :a, CELULAR = :b WHERE ID = :id');
+                $stmt = $pdo->prepare('UPDATE USUARIO SET NOME = :a, CELULAR = :b, LOGIN = :c, SENHA = :d, TIPO_ID = :e WHERE ID = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
                     ':a' => $requestData['NOME'],
-                    ':b' => $requestData['CELULAR']
+                    ':b' => $requestData['CELULAR'],
+                    ':c' => $requestData['LOGIN'],
+                    ':d' => md5($requestData['SENHA']),
+                    ':e' => $requestData['TIPO_ID']
                 ));
                 $dados = array(
                     "tipo" => 'success',
@@ -59,5 +65,5 @@
         }
     }
 
-    // Converter um array ded dados para a representação JSON
+    // Converter um array de dados para a representação JSON
     echo json_encode($dados);

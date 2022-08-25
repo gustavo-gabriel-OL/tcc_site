@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
     $('.btn-save').click(function(e) {
-        e.preventDefault()
+
+        e.preventDefault();
 
         let dados = $('#form-usuario').serialize()
 
