@@ -1,10 +1,5 @@
  <?php
 
-    // $hostname = "sql102.epizy.com";
-    // $dbname = "epiz_31454920_rifadastico_2004"
-    // $username = "epiz_31454920";
-    // $password "g23VzpiKkzp8Ae8";
-
     $hostname = "localhost";
     $dbname = "TCC";
     $username = "root";
