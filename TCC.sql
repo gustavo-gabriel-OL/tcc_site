@@ -17,17 +17,15 @@ CREATE TABLE IF NOT EXISTS `docker` (
   `UID` VARCHAR(8) NOT NULL,
   `name` VARCHAR(200),
   `RG` VARCHAR(14),
-  `bday` DATE,
-  `type` CHAR,
+  `type` CHAR(10),
   `email` VARCHAR(70),
   `password` VARCHAR(40),
   `balance` FLOAT,
+  `isAdm` BOOLEAN,
   PRIMARY KEY (`UID`),
   UNIQUE INDEX `RG_UNIQUE` (`RG` ASC)
 )
 ENGINE = InnoDB;
-
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
