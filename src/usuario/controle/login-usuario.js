@@ -18,7 +18,7 @@
 //                     $(location).attr('href', 'sistema.html')
 //                 } else {
 //                     Swal.fire({
-//                         title: 'FacilitaBus',
+//                         title: 'SGPO',
 //                         text: dados.mensagem,
 //                         icon: dados.tipo,
 //                         confirmButtonText: 'OK'

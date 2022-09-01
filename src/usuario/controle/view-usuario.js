@@ -55,7 +55,7 @@ $(document).ready(function() {
                     $('#modal-usuario').modal('show')
                 } else {
                     Swal.fire({ // Inicialização do SweetAlert
-                        title: 'FacilitaBus', // Título da janela SweetAler
+                        title: 'SGPO', // Título da janela SweetAler
                         text: dado.mensagem, // Mensagem retornada do microserviço
                         type: dado.tipo, // usuario de retorno [success, info ou error]
                         confirmButtonText: 'OK'

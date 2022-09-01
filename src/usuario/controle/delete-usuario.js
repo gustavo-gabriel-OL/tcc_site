@@ -7,7 +7,7 @@ $(document).ready(function() {
         let ID = `ID=${$(this).attr('id')}`
 
         Swal.fire({
-            title: 'FacilitaBus',
+            title: 'SGPO',
             text: "Deseja realmente excluir esse registro?",
             icon: 'question',
             showCancelButton: true,
@@ -24,7 +24,7 @@ $(document).ready(function() {
                     url: 'src/usuario/modelo/delete-usuario.php',
                     success: function(dados) {
                         Swal.fire({
-                            title: 'FacilitaBus',
+                            title: 'SGPO',
                             text: dados.mensagem,
                             icon: dados.tipo,
                             confirmButtonText: 'OK'
