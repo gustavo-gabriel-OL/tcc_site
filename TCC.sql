@@ -13,7 +13,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `docker` (
+CREATE TABLE IF NOT EXISTS `user` (
   `UID` VARCHAR(8) NOT NULL,
   `name` VARCHAR(200),
   `RG` VARCHAR(14),
