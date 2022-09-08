@@ -27,7 +27,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RIFA`.`PREMIO`
+-- Table `mydb`.`PREMIO`
 -- -----------------------------------------------------
 CREATE TABLE `PREMIO` (
   `ID` INT NOT NULL AUTO_INCREMENT,
@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RIFA`.`TIPO`
+-- Table `mydb`.`TIPO`
 -- -----------------------------------------------------
 CREATE TABLE `TIPO` (
   `ID` INT NOT NULL AUTO_INCREMENT,
@@ -50,7 +50,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RIFA`.`VENDEDOR`
+-- Table `mydb`.`VENDEDOR`
 -- -----------------------------------------------------
 CREATE TABLE `VENDEDOR` (
   `ID` INT NOT NULL AUTO_INCREMENT,
@@ -64,7 +64,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RIFA`.`COMPRADOR`
+-- Table `mydb`.`COMPRADOR`
 -- -----------------------------------------------------
 CREATE TABLE `COMPRADOR` (
   `ID` INT NOT NULL AUTO_INCREMENT,
@@ -75,7 +75,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RIFA`.`NUMEROS`
+-- Table `mydb`.`NUMEROS`
 -- -----------------------------------------------------
 CREATE TABLE `NUMEROS` (
   `ID` BIGINT NOT NULL AUTO_INCREMENT,
@@ -87,7 +87,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RIFA`.`VENDA`
+-- Table `mydb`.`VENDA`
 -- -----------------------------------------------------
 CREATE TABLE `VENDA` (
   `ID` INT NOT NULL AUTO_INCREMENT,
@@ -98,7 +98,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RIFA`.`NUMEROS_COMPRADOS`
+-- Table `mydb`.`NUMEROS_COMPRADOS`
 -- -----------------------------------------------------
 CREATE TABLE `NUMEROS_COMPRADOS` (
   `COMPRADOR_ID` INT NOT NULL,
@@ -108,7 +108,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RIFA`.`RESULTADO`
+-- Table `mydb`.`RESULTADO`
 -- -----------------------------------------------------
 CREATE TABLE `RESULTADO` (
   `ID` INT NOT NULL AUTO_INCREMENT,
