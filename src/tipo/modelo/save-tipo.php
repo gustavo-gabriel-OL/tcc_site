@@ -33,7 +33,7 @@
             } catch(PDOException $e) {
                 $dados = array(
                     "tipo" => 'error',
-                    "mensagem" => 'Não foi possível efetuar o cadastro do curso.'
+                    "mensagem" => 'Não foi possível efetuar o cadastro do curso.'.$e
                 );
             }
         } else {
