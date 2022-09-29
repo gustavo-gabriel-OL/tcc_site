@@ -11,35 +11,6 @@ CREATE SCHEMA IF NOT EXISTS `TCC`;
 USE `TCC` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`PROMOCAO`
--- -----------------------------------------------------
-CREATE TABLE `PROMOCAO` (
-  `ID` INT NOT NULL AUTO_INCREMENT,
-  `TITULO` VARCHAR(45) NOT NULL,
-  `DESCRICAO` VARCHAR(255) NULL,
-  `DATA_INICIO` DATE NOT NULL,
-  `DATA_FIM` DATE NOT NULL,
-  `DATA_SORTEIO` DATE NOT NULL,
-  `ARRECADACAO` DOUBLE NOT NULL,
-  `VALOR_RIFA` DOUBLE NOT NULL,
-  PRIMARY KEY (`ID`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`PREMIO`
--- -----------------------------------------------------
-CREATE TABLE `PREMIO` (
-  `ID` INT NOT NULL AUTO_INCREMENT,
-  `NOME` VARCHAR(45) NOT NULL,
-  `DESCRICAO` VARCHAR(255) NOT NULL,
-  `VALOR` DOUBLE NOT NULL,
-  `PROMOCAO_ID` INT NOT NULL,
-  PRIMARY KEY (`ID`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `mydb`.`TIPO`
 -- -----------------------------------------------------
 CREATE TABLE `TIPO` (
@@ -50,9 +21,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`VENDEDOR`
+-- Table `mydb`.`USUARIO`
 -- -----------------------------------------------------
-CREATE TABLE `VENDEDOR` (
+CREATE TABLE `USUARIO` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `NOME` VARCHAR(100) NOT NULL,
   `CELULAR` INT NOT NULL,
@@ -63,64 +34,7 @@ CREATE TABLE `VENDEDOR` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `mydb`.`COMPRADOR`
--- -----------------------------------------------------
-CREATE TABLE `COMPRADOR` (
-  `ID` INT NOT NULL AUTO_INCREMENT,
-  `NOME` VARCHAR(100) NOT NULL,
-  `CELULAR` INT NOT NULL,
-  PRIMARY KEY (`ID`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`NUMEROS`
--- -----------------------------------------------------
-CREATE TABLE `NUMEROS` (
-  `ID` BIGINT NOT NULL AUTO_INCREMENT,
-  `NUMERO` INT NOT NULL,
-  `PROMOCAO_ID` INT NOT NULL,
-  `VENDEDOR_ID` INT NOT NULL,
-  PRIMARY KEY (`ID`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`VENDA`
--- -----------------------------------------------------
-CREATE TABLE `VENDA` (
-  `ID` INT NOT NULL AUTO_INCREMENT,
-  `DATA_VENDA` DATE NOT NULL,
-  `VALOR` DOUBLE NOT NULL,
-  PRIMARY KEY (`ID`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`NUMEROS_COMPRADOS`
--- -----------------------------------------------------
-CREATE TABLE `NUMEROS_COMPRADOS` (
-  `COMPRADOR_ID` INT NOT NULL,
-  `NUMEROS_ID` BIGINT NOT NULL,
-  `VENDA_ID` INT NOT NULL)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`RESULTADO`
--- -----------------------------------------------------
-CREATE TABLE `RESULTADO` (
-  `ID` INT NOT NULL AUTO_INCREMENT,
-  `DATA` DATE NOT NULL,
-  `PROMOCAO_ID` INT NOT NULL,
-  `NUMEROS_ID` BIGINT NOT NULL,
-  PRIMARY KEY (`ID`))
-ENGINE = InnoDB;
-
-
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
--- SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
