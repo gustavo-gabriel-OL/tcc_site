@@ -9,10 +9,10 @@ $requestData = $_REQUEST;
 // Verificação de campo obrigatórios do formulário
 if (empty($requestData['NOME'])) {
     // Caso a variável venha vazia eu gero um retorno de erro do mesmo
-  $dados = array(
-      "tipo" => 'error',
-      "mensagem" => 'Existe(m) campo(s) obrigatório(s) não preenchido(s).'
-   );
+    $dados = array(
+        "tipo" => 'error',
+        "mensagem" => 'Existe(m) campo(s) obrigatório(s) não preenchido(s).'
+    );
 }else{
     // Caso não exista campo em vazio, vamos gerar a requisição
     $ID = isset($requestData['ID']) ? $requestData['ID'] : '';

@@ -15,7 +15,7 @@ $(document).ready(function() {
             success: function(dados) {
 
                 if (dados.tipo == 'success') {
-                    $(location).attr('href', 'sistema.html')
+                    $(location).attr('href', 'adm.html')
                 } else {
                     Swal.fire({
                         title: 'SGPO',
