@@ -32,3 +32,32 @@ CREATE TABLE `USUARIO` (
   `TIPO_ID` INT NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`CARTAO`
+-- -----------------------------------------------------
+CREATE TABLE `CARTAO` (
+  `UID` varchar(8) NOT NULL,
+  `PASS` int(99)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Despejando dados para a tabela `user`
+--
+
+INSERT INTO `CARTAO` (`UID`, `PASS`) VALUES
+('7A2AF1D1', 2),
+('9B05341B', 10),
+('F72C6A29', 71);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `user`
+--
+ALTER TABLE `CARTAO`
+  ADD PRIMARY KEY (`UID`);
+COMMIT;
