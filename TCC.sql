@@ -34,6 +34,18 @@ CREATE TABLE `USUARIO` (
 ENGINE = InnoDB;
 
 
+
+-- -- -----------------------------------------------------
+-- -- Table `mydb`.`EMPRESA`
+-- -- -----------------------------------------------------
+-- CREATE TABLE `EMPRESA` (
+--   `ID` INT NOT NULL AUTO_INCREMENT,
+--   `NOME` VARCHAR(100) NOT NULL,
+--   `CELULAR` INT NOT NULL,
+--   `IMAGEM` 
+-- ENGINE = InnoDB;
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`CARTAO`
 -- -----------------------------------------------------
