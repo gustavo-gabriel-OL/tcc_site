@@ -12,3 +12,9 @@
 body{
     background-color: #278AF0;
     }
+.IC{
+    width: 30%;
+    height: 30%;
+    align-items: left;
+    margin-top: 10%;
+}
