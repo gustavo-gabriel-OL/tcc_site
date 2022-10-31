@@ -18,3 +18,19 @@ body{
     align-items: left;
     margin-top: 10%;
 }
+
+.bn{
+    color: #a9a9d3fa;
+    background-color: #017EC1;
+}
+.ts{
+    font-size:large;
+    margin-left: 15%;
+}
+
+.image {
+    height: 90px;
+    width: 100px;
+    image-rendering: auto;
+    margin-right: 15px;
+  }
