@@ -7,8 +7,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `TCC`;
-USE `TCC` ;
+CREATE SCHEMA IF NOT EXISTS `banco`;
+USE `banco` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`TIPO`
