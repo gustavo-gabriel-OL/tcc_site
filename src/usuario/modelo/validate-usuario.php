@@ -13,7 +13,9 @@
         $dados = array(
             'tipo' => 'success',
             'mensagem' => 'Seja bem vindo ' .$_SESSION ['NOME']
+            
         );
+        
     }
 
     echo json_encode($dados); 

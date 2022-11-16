@@ -52,6 +52,9 @@ margin-bottom: 30%;
     background-color: #000000be;
 }
 
+body{
+    
+    }
 .IC{
     width: 30%;
     height: 30%;
@@ -77,6 +80,27 @@ margin-bottom: 30%;
     width: 100px;
     image-rendering: auto;
     margin-right: 15px;
-  }
+}
 
-  
+#st-box {
+    float:left;
+    width:250px;
+    height:250px;
+    margin: 2%!important;
+}
+
+h3{
+    text-align: center;
+    margin-right: 6%;
+}
+
+h1{
+    text-align: center;
+}
+
+button{
+    align-items: center;
+}
+body{
+    margin-top: 10% !important;
+}
