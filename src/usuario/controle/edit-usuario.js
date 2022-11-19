@@ -18,7 +18,7 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: ID,
-            url: 'src/usuario/model/view-usuario.php',
+            url: 'src/usuario/modelo/view-usuario.php',
             success: function(dado) {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/usuario/visao/form-usuario.html', function() {

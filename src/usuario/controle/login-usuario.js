@@ -14,9 +14,14 @@ $(document).ready(function() {
             url: 'src/usuario/modelo/login-usuario.php',
             success: function(dados) {
 
-                if (dados.tipo == 'success') {
+                if (dados.tipo == '1'){
+                    $(location).attr('href', 'user.html')
+
+                }else if(dados.tipo == '2'){
                     $(location).attr('href', 'adm.html')
-                } else {
+
+                }else{
+                    $(location).attr('href', 'index.html')
                     Swal.fire({
                         title: 'SGPO',
                         text: dados.mensagem,

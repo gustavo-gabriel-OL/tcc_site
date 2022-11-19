@@ -10,6 +10,16 @@
         );
 
     }else{
+
+        $sql ='SELECT * FROM USUARIO WHERE TIPO_ID = ? LIMIT 1';
+        $sql = DB: :instanciar()->prepare($sql);
+        $sql ->execute(array($_SESSION['tipo_id']));
+        $sql = $sql ->fetch(PDO::FETCH_ASSOC);
+
+        $_SESSION ['id'] = $sql ['ID'];
+        $_SESSION ['nome'] = $sql ['NOME'];
+        $_SESSION ['tipo_id'] = $sql ["TIPO_ID"];
+
         $dados = array(
             'tipo' => 'success',
             'mensagem' => 'Seja bem vindo ' .$_SESSION ['NOME']

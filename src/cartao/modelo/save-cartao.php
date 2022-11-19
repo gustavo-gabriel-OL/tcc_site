@@ -22,9 +22,10 @@
         if($operacao == 'insert'){
             // Prepara o comando INSERT para ser executado
             try{
-                $stmt = $pdo->prepare('INSERT INTO CARTAO (NOME) VALUES (:a)');
+                $stmt = $pdo->prepare('INSERT INTO CARTAO (`UID`, `PASS`) VALUES (:a, :b)');
                 $stmt->execute(array(
-                    ':a' => utf8_decode($requestData['NOME'])
+                    ':a' => utf8_decode($requestData['UID']),
+                    ':b' => utf8_decode($requestData['PASS'])
                 ));
                 $dados = array(
                     "tipo" => 'success',
@@ -39,10 +40,10 @@
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
-                $stmt = $pdo->prepare('UPDATE CARTAO SET NOME = :a WHERE ID = :id');
+                $stmt = $pdo->prepare('UPDATE CARTAO SET PASS = :a WHERE ID = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => utf8_decode($requestData['NOME'])
+                    ':a' => utf8_decode($requestData['PASS'])
                 ));
                 $dados = array(
                     "tipo" => 'success',
