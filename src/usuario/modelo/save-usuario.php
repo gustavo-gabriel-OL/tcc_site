@@ -22,7 +22,22 @@ if (empty($requestData['NOME'])) {
     if ($operacao == 'insert') {
         // Prepara o comando INSERT para ser executado
         try {
-            $stmt = $pdo->prepare('INSERT INTO USUARIO (NOME, CELULAR, LOGIN, SENHA, TIPO_ID) VALUES (:a, :b, :c, :d, :e)');
+
+            if($requestData['TIPO_ID'] == 2){
+
+                $stmt = $pdo->prepare('INSERT INTO ADMINISTRADOR (NOME, CELULAR, LOGIN, SENHA, TIPO_ID) VALUES (:a, :b, :c, :d, :e)');
+
+            $stmt->execute(array(
+
+                ':a' =>$requestData['NOME'],
+                ':b' =>$requestData['CELULAR'],
+                ':c' =>$requestData['LOGIN'],
+                ':d' => ($requestData['SENHA']),
+                ':e' =>$requestData['TIPO_ID']
+
+            ));
+            }else{
+                $stmt = $pdo->prepare('INSERT INTO USUARIO (NOME, CELULAR, LOGIN, SENHA, TIPO_ID) VALUES (:a, :b, :c, :d, :e)');
             $stmt->execute(array(
                 ':a' => $requestData['NOME'],
                 ':b' => $requestData['CELULAR'],
@@ -30,6 +45,8 @@ if (empty($requestData['NOME'])) {
                 ':d' => ($requestData['SENHA']),
                 ':e' => $requestData['TIPO_ID']
             ));
+            }
+            
             $dados = array(
                 "tipo" => 'success',
                 "mensagem" => 'Registro salvo com sucesso.'

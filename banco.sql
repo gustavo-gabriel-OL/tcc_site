@@ -34,16 +34,34 @@ CREATE TABLE `USUARIO` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `mydb`.`ADMINISTRADOR`
+-- -----------------------------------------------------
+CREATE TABLE `ADMINISTRADOR` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `NOME` VARCHAR(100) NOT NULL,
+  `CELULAR` INT NOT NULL,
+  `LOGIN` VARCHAR(16) NOT NULL,
+  `SENHA` VARCHAR(255) NOT NULL,
+  `TIPO_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB;
+
 
 -- -- -----------------------------------------------------
 -- -- Table `mydb`.`EMPRESA`
 -- -- -----------------------------------------------------
--- CREATE TABLE `EMPRESA` (
---   `ID` INT NOT NULL AUTO_INCREMENT,
---   `NOME` VARCHAR(100) NOT NULL,
---   `CELULAR` INT NOT NULL,
---   `IMAGEM` 
--- ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `EMPRESA` (
+  `IDEMPRESA` INT NOT NULL AUTO_INCREMENT,
+  `TITULO` VARCHAR(150) NOT NULL,
+  `ANO` INT NOT NULL,
+  `NROPAGINAS` INT NOT NULL,
+  `RESUMO` LONGTEXT NOT NULL,
+  `ORIENTADOR` VARCHAR(100) NOT NULL,
+  `COORIENTADOR` VARCHAR(100) NULL,
+  `HORARIO` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`IDTRABALHO`))
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -57,12 +75,6 @@ CREATE TABLE `CARTAO` (
 --
 -- Despejando dados para a tabela `user`
 --
-
-INSERT INTO `CARTAO` (`UID`, `PASS`) VALUES
-('7A2AF1D1', 2),
-('9B05341B', 10),
-('F72C6A29', 71);
-
 --
 -- Índices para tabelas despejadas
 --

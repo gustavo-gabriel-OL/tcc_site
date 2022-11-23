@@ -6,48 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGPO</title>
-    <link rel="shortcut icon" href="img/FacilitaBus.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="libs/fontawesome/css/all.css">
-    <link rel="stylesheet" href="libs/sweetAlert/dist/sweetalert2.css">
-    <link rel="stylesheet" href="libs/DataTables/datatables.css">
-    <link rel="stylesheet" href="css/empresa.css">
+    <link rel="shortcut icon" href="../img/FacilitaBus.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../libs/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../libs/sweetAlert/dist/sweetalert2.css">
+    <link rel="stylesheet" href="../libs/DataTables/datatables.css">
+    <link rel="stylesheet" href="../css/empresa.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top position-fixed shadow bn m">
+    <nav class="navbar navbar-expand-lg fixed-top position-fixed shadow bn m">
         <a class="navbar-brand">
         </a>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <img class="image position-relative" src="img/SGPO.jpeg" alt="">  
+        <img class="image position-relative" src="../img/SGPO.jpeg" alt="">
         <div id="my-nav" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto ts position-relative t ">
-                <li class="nav-item m-lg-3">
-                    <a class="nav-link" href="user.html"><h4 class="tx"><i class="fa-solid fa-house"></i> Cartão</h4></a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item m-lg-4">
+                    <a class="" href="../user.html" style="text-decoration:none"> <h4 class="tx"><i class="fa-solid fa-users"></i> Cartão</h4></a>
                 </li>
-                <li class="nav-item m-lg-3">
-                    <a class="nav-link" href="#"><h4 class="tx"><i class="fa-solid fa-sack-dollar"></i> Empresa</h4></a>
+                <li class="nav-item m-lg-4">
+                    <a class="" href="#" style="text-decoration:none"><h4 class="tx"><i class="fa-solid fa-bus"></i> Empresa </h4></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link m-lg-3 text-white" href="suporte.html"><h4 class="tx"><i class="fa-solid fa-comments-dollar"></i> Suporte</h4></a>
+                <li class="nav-item m-lg-4">
+                    <a class="" href="suporte.html" style="text-decoration:none"> <h4 class="tx"><i class="fa-solid fa-id-card"></i> Suporte </h4></a>
                 </li>
             </ul>
-            <a class="nav-link ts" href="../login.html"><h4 class="tx sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</h4></a>
+            <a class="text-white" id="logout"><h4 class="tx"><i class="fa-solid fa-right-from-bracket"></i> Sair do Sistema </h4></a>
         </div>
     </nav>
     </head> 
       
     <body>
+        
         <h1>Empresas</h1>
         
         <div class="container">
             <div id="st-box">
                 <h3>Guerino</h3>
-                <img src="img/250.png" alt="">
+                <img src="../img/250.png" alt="">
                 <br><br>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#JanelaModal"> + Informações
                 </button>
@@ -75,7 +76,7 @@
             </div>
             <div id="st-box">
                 <h3>Rapido</h3>
-                <img src="img/250.png" alt="">
+                <img src="../img/250.png" alt="">
                 <br><br>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#JanelaModal"> Horario
                 </button>
@@ -99,11 +100,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+            <br><br>  <br><br>  <br><br>  <br><br>  <br>  <br>  <br>  <br>  <br>  <br>        <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  
             <div id="st-box">
                 <h3>Rodando Rotas</h3>
-                <img src="img/250.png" alt="">
+                <img src="../img/250.png" alt="">
                 <br><br>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#JanelaModal"> + Informações
                 </button>
@@ -139,6 +140,8 @@
     <script src="../libs/fontawesome/js/all.js"></script>
     <script src="../libs/DataTables/datatables.js"></script>
     <script src="../libs/sweetAlert/dist/sweetalert2.all.js"></script>
+    <script src="../src/usuario/controle/validate-usuario.js"></script>
+    <script src="../src/usuario/controle/logout-usuario.js"></script>
 
 </body>
 </html>

@@ -2,13 +2,9 @@ $(document).ready(function() {
     $('.btn-save').click(function(e) {
         e.preventDefault()
 
-        if ($('#operacao').val() == 'insert') {
-            url = "src/noticia/model/save-noticia.php"
-        } else {
-            url = "src/noticia/model/edit-noticia.php"
-        }
+        url = "src/empresa/modelo/save-empresa.php"
 
-        var formData = new FormData(document.getElementById("form-noticia"))
+        var formData = new FormData(document.getElementById("form-empresa"))
 
         $.ajax({
             url: url,
@@ -21,14 +17,13 @@ $(document).ready(function() {
             processData: false,
             success: function(dados) {
                 Swal.fire({
-                    title: 'Gerenciador Etec Cafelândia',
+                    title: 'SGPO',
                     text: dados.mensagem,
                     icon: dados.tipo,
                     confirmButtonText: 'OK'
                 })
 
-                $('#modal-noticia').modal('hide')
-                $('#table-noticia').DataTable().ajax.reload()
+                $('#modal-trabalho').modal('hide')
             }
         })
     })

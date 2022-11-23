@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="libs/sweetAlert/dist/sweetalert2.css">
     <link rel="stylesheet" href="libs/DataTables/datatables.css">
     <link rel="stylesheet" href="css/user.css">
-    <link rel="stylesheet" href="user.php">
 </head>
 
 <body>
@@ -25,20 +24,22 @@
         </button>
         <img class="image position-relative" src="img/SGPO.jpeg" alt="">
         <div id="my-nav" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item m-lg-3">
-                    <a class="nav-link" href="#"> <h4 class="tx"><i class="fa-solid fa-users"></i> Cartão</h4></a>
+            <ul class="navbar-nav ">
+                <li class="nav-item m-lg-4">
+                    <a class="" href="#" style="text-decoration:none"> <h4 class="tx"><i class="fa-solid fa-users"></i> Cartão</h4></a>
                 </li>
-                <li class="nav-item m-lg-3">
-                    <a class="nav-link" href="empresa.html"><h4 class="tx"><i class="fa-solid fa-bus"></i> Empresa </h4></a>
+                <li class="nav-item m-lg-4">
+                    <a class="" href="user-src/empresa.html" style="text-decoration:none"><h4 class="tx"><i class="fa-solid fa-bus"></i> Empresa </h4></a>
                 </li>
-                <li class="nav-item m-lg-3">
-                    <a class="nav-link " href="suporte.html"> <h4 class="tx"><i class="fa-solid fa-id-card"></i> Suporte </h4></a>
+                <li class="nav-item m-lg-4">
+                    <a class="" href="user-src/suporte.html" style="text-decoration:none"> <h4 class="tx"><i class="fa-solid fa-id-card"></i> Suporte </h4></a>
                 </li>
             </ul>
             <a class="text-white" id="logout"><h4 class="tx"><i class="fa-solid fa-right-from-bracket"></i> Sair do Sistema </h4></a>
         </div>
     </nav>
+    <br><br><br><br><br>
+
 
     <div class="info-user">
         <p id="nome"></p>
@@ -52,6 +53,8 @@
     <script src="../libs/fontawesome/js/all.js"></script>
     <script src="../libs/DataTables/datatables.js"></script>
     <script src="../libs/sweetAlert/dist/sweetalert2.all.js"></script>
+    <script src="src/usuario/controle/validate-usuario.js"></script>
+    <script src="src/usuario/controle/logout-usuario.js"></script>
 
 </body>
 </html>
