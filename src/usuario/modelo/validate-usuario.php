@@ -1,21 +1,21 @@
 <?php
     
-    session_start();
-    if(!isset($_SESSION['LOGIN']) && !isset($_SESSION['TIPO_ID'])){
+//     session_start();
+//     if(!isset($_SESSION['LOGIN']) && !isset($_SESSION['TIPO_ID'])){
 
-    $dados = array(
+//     $dados = array(
 
-        'tipo' =>'error',
-        'mensagem' =>'Usuário ou senha incorretos, acesso negado.'
+//         'tipo' =>'error',
+//         'mensagem' =>'Usuário ou senha incorretos, acesso negado.'
 
-    );
-} else {
+//     );
+// } else {
 
-    $dados = array(
+//     $dados = array(
 
-        'tipo' =>'success',
-        'mensagem' =>'Seja bem-vindo '.$_SESSION['LOGIN']
+//         'tipo' =>'success',
+//         'mensagem' =>'Seja bem-vindo '.$_SESSION['LOGIN']
 
-    );
-}
-echo json_encode($dados);
+//     );
+// }
+// echo json_encode($dados);

@@ -23,7 +23,7 @@ $(document).ready(function() {
                     confirmButtonText: 'OK'
                 })
 
-                $('#modal-trabalho').modal('hide')
+                $('#modal-empresa').modal('hide')
             }
         })
     })

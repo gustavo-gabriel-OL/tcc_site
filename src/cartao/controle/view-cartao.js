@@ -22,8 +22,8 @@ $(document).ready(function() {
             success: function(dado) {
                 if (dado.cartao == "success") {
                     $('.modal-body').load('src/cartao/visao/form-cartao.html', function() {
-                        $('#NOME').val(dado.dados.NOME)
-                        $('#NOME').attr('readonly', 'true')
+                        $('#PASS').val(dado.dados.PASS)
+                        $('#PASS').attr('readonly', 'true')
                     })
                     $('.btn-save').hide()
                     $('#modal-cartao').modal('show')

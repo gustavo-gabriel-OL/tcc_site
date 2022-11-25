@@ -15,6 +15,6 @@ $(document).ready(function() {
 
         $('.btn-save').attr('data-operation', 'insert')
 
-        $('#modal-trabalho').modal('show')
+        $('#modal-empresa').modal('show')
     })
 })

@@ -1,18 +1,10 @@
 <?php
-
-    // Instância do banco de dados
     include("../../conexao/conn.php");
 
-    // Coleta do ID que será excluído do nosso banco de dados que está sendo enviado pelo FORM
-    $ID = $_REQUEST['IDTRABALHO'];
-
-    // Criar a nossa querie para interação com o banco de dados
-    $sql = "DELETE FROM TRABALHO WHERE IDTRABALHO = $ID";
-
-    // Executar a nossa querie
+    $ID = $_REQUEST['IDEMPRESA'];
+    $sql = "DELETE FROM EMPRESA WHERE IDEMPRESA = $ID";
     $resultado = $pdo->query($sql);
 
-    // Testaremos o retorno do resultado da nossa querie
     if($resultado){
         $dados = array(
             'tipo' => 'success',

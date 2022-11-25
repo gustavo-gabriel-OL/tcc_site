@@ -7,7 +7,7 @@
     $requestData = $_REQUEST;
 
     // Verificação de campo obrigatórios do formulário
-    if(empty($requestData['NOME'])){
+    if(empty($requestData['PASS'])){
         // Caso a variável venha vazia eu gero um retorno de erro do mesmo
         $dados = array(
             "tipo" => 'error',
@@ -15,7 +15,7 @@
         );
     } else {
         // Caso não exista campo em vazio, vamos gerar a requisição
-        $ID = isset($requestData['ID']) ? $requestData['ID'] : '';
+        $ID = isset($requestData['UID']) ? $requestData['UID'] : '';
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
 
         // Verifica se é para cadastra um nvo registro
@@ -40,10 +40,11 @@
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
-                $stmt = $pdo->prepare('UPDATE CARTAO SET PASS = :a WHERE ID = :id');
+                $stmt = $pdo->prepare('UPDATE CARTAO SET UID = :a, PASS = :b WHERE UID = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => utf8_decode($requestData['PASS'])
+                    ':a' => utf8_decode($requestData['UID']),
+                    ':b' => utf8_decode($_REQUEST['PASS'])
                 ));
                 $dados = array(
                     "tipo" => 'success',

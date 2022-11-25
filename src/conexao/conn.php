@@ -2,7 +2,7 @@
 
 $hostname = "banco";
 $dbname = "banco";
-$username = "gustavo";
+$username = "root";
 $password = "242704";
 
 try{
