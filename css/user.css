@@ -9,10 +9,6 @@
     font-family: 'Viaoda Libre', sans-serif;
 }
 
-html{
-    overflow-x:hidden;
-    }
-
 .testo{
         margin-top: 8%;
         position: absolute;
@@ -67,13 +63,9 @@ margin-bottom: 30%;
     color: #a9a9d3fa;
     background-color: #04203b;
 }
-.ts{
-    font-size:large;
-    margin-left: 20%;
-}
 
 .m{
-    margin-bottom: 5%; 
+    margin-top: 8% !important; 
 }
 
 .image {
@@ -83,4 +75,31 @@ margin-bottom: 30%;
     margin-right: 15px;
   }
 
-  
+.m{
+    margin-bottom: 50% !important; 
+}
+
+.b{
+  cursor: pointer;
+}
+
+/* Extra small devices (portrait phones, less than 576px)*/
+    @media (max-width: 575.98px) {
+    .m{  
+        margin-top: 15% !important;
+    }
+    }
+    
+    /* Small devices (landscape phones, less than 768px) */
+    @media (max-width: 767.98px) {
+
+    }
+    
+    /* Medium devices (tablets, less than 992px) */
+    @media (max-width: 991.98px) {}
+    
+    /* Large devices (desktops, less than 1200px) */
+    @media (max-width: 1199.98px) {}
+    
+    /* Extra large devices (large desktops) 
+     No media query since the extra-large breakpoint has no upper bound on its width */

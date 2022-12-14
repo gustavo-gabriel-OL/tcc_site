@@ -1,13 +1,7 @@
-@import url(' https://fonts.cdnfonts.com/css/viaoda-libre ');
-@import url('https://fonts.cdnfonts.com/css/poiret-one');
-
 .Fonte{
-    font-family: 'Viaoda Libre', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black ;
 }
-
-html{
-    overflow-x:hidden;
-    }
 
 .testo{
         margin-top: 8%;
@@ -47,14 +41,13 @@ height: 300px;
 background: #fff;
 margin-bottom: 30%;
 }
-
+body{
+    background: #25425e!important;
+}
 .FN{
     background-color: #000000be;
 }
 
-body{
-    
-    }
 .IC{
     width: 30%;
     height: 30%;
@@ -71,13 +64,18 @@ body{
     margin-left: 20%;
 }
 
-.m{
-    margin-bottom: 5%; 
-}
-
 .image {
     height: 90px;
     width: 100px;
     image-rendering: auto;
     margin-right: 15px;
   }
+
+  .m{
+    margin-bottom: 3% !important; 
+}
+
+.b{
+  cursor: pointer;
+}
+

@@ -7,7 +7,7 @@
     $ID = $_REQUEST['UID'];
 
     // Criar a nossa querie para interação com o banco de dados
-    $sql = "DELETE FROM CARTAO WHERE UID = $ID";
+    $sql = "DELETE FROM CARTAO WHERE UID = '$ID'";
 
     // Executar a nossa querie
     $resultado = $pdo->query($sql);

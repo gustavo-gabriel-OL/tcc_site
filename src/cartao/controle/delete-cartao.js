@@ -4,7 +4,7 @@ $(document).ready(function() {
 
         e.preventDefault()
 
-        let ID = `ID=${$(this).attr('id')}`
+        let UID = `UID=${$(this).attr('id')}`
 
         Swal.fire({
             title: 'SGPO',
@@ -20,7 +20,7 @@ $(document).ready(function() {
                     type: 'POST',
                     dataType: 'json',
                     assync: true,
-                    data: ID,
+                    data: UID,
                     url: 'src/cartao/modelo/delete-cartao.php',
                     success: function(dados) {
                         Swal.fire({

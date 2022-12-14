@@ -19,6 +19,18 @@ $(document).ready(function() {
                     }
                 }
             })
+
+            $.ajax({
+                dataType: 'json',
+                type: 'POST',
+                assync: true,
+                url: 'src/cartao/modelo/cartao-sem-usuario.php',
+                success: function(dados) {
+                    for (const result of dados) {
+                        $('#CARTAO_ID').append(`<option value="${result.UID}">${result.UID}</option>`)
+                    }
+                }
+            })
         })
 
         $('.btn-save').show()

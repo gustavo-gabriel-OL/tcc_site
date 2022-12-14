@@ -1,37 +1,35 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 
-//     $('.btn-login').click(function(e) {
+    $('.btn-login').click(function(e) {
 
-//         e.preventDefault();
+        e.preventDefault();
 
-//         let dados = $('#form-login').serialize()
+        let dados = $('#form-login').serialize()
 
-//         $.ajax({
-//             type: 'POST',
-//             dataType: 'json',
-//             assync: true,
-//             data: dados,
-//             url: 'src/usuario/modelo/login-usuario.php',
-//             success: function(dados) {
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            assync: true,
+            data: dados,
+            url: 'src/usuario/modelo/login-usuario.php',
+            success: function(dados) {
 
-//                 if (dados.tipo == '1'){
-//                     $(location).attr('href', 'user.html')
+                if (dados.tipo == 'success'){
 
-//                 }else if(dados.tipo == '2'){
-//                     $(location).attr('href', 'adm.html')
+                    $(location).attr('href', 'home.html')
 
-//                 }else{
-//                     $(location).attr('href', 'index.html')
-//                     Swal.fire({
-//                         title: 'SGPO',
-//                         text: dados.mensagem,
-//                         icon: dados.tipo,
-//                         confirmButtonText: 'OK'
-//                     })
+                }else{
+                    $(location).attr('href', 'index.html')
+                    Swal.fire({
+                        title: 'SGPO',
+                        text: dados.mensagem,
+                        icon: dados.tipo,
+                        confirmButtonText: 'OK'
+                    })
 
-//                 }
-//             }
-//         })
-//     })
+                }
+            }
+        })
+    })
 
-// })
+})

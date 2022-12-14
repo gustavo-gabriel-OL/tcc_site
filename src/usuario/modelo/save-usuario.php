@@ -21,53 +21,40 @@ if (empty($requestData['NOME'])) {
     // Verifica se é para cadastrar um novo registro
     if ($operacao == 'insert') {
         // Prepara o comando INSERT para ser executado
-        try {
+        // try {
 
-            if($requestData['TIPO_ID'] == 2){
-
-                $stmt = $pdo->prepare('INSERT INTO ADMINISTRADOR (NOME, CELULAR, LOGIN, SENHA, TIPO_ID) VALUES (:a, :b, :c, :d, :e)');
-
-            $stmt->execute(array(
-
-                ':a' =>$requestData['NOME'],
-                ':b' =>$requestData['CELULAR'],
-                ':c' =>$requestData['LOGIN'],
-                ':d' => ($requestData['SENHA']),
-                ':e' =>$requestData['TIPO_ID']
-
-            ));
-            }else{
-                $stmt = $pdo->prepare('INSERT INTO USUARIO (NOME, CELULAR, LOGIN, SENHA, TIPO_ID) VALUES (:a, :b, :c, :d, :e)');
+            $stmt = $pdo->prepare('INSERT INTO USUARIO (NOME, CELULAR, LOGIN, SENHA, TIPO_ID, CARTAO) VALUES (:a, :b, :c, :d, :e, :f)');
             $stmt->execute(array(
                 ':a' => $requestData['NOME'],
                 ':b' => $requestData['CELULAR'],
                 ':c' => $requestData['LOGIN'],
                 ':d' => ($requestData['SENHA']),
-                ':e' => $requestData['TIPO_ID']
+                ':e' =>$requestData['TIPO_ID'],
+                ':f' =>$requestData['CARTAO_ID']
             ));
-            }
             
             $dados = array(
                 "tipo" => 'success',
                 "mensagem" => 'Registro salvo com sucesso.'
             );
-        } catch (PDOException $e) {
-            $dados = array(
-                "tipo" => 'error',
-                "mensagem" => 'Não foi possível efetuar o cadastro do curso.'
-            );
-        }
+        // } catch (PDOException $e) {
+        //     $dados = array(
+        //         "tipo" => 'error',
+        //         "mensagem" => 'Não foi possível efetuar o cadastro desse usuário.'
+        //     );
+        // }
     } else {
         // Se minha variável operação estiver vazia então devo gerar os scripts de update
         try {
-            $stmt = $pdo->prepare('UPDATE USUARIO SET NOME = :a, CELULAR = :b, LOGIN = :c, SENHA = :d, TIPO_ID = :e WHERE ID = :id');
+            $stmt = $pdo->prepare('UPDATE USUARIO SET NOME = :a, CELULAR = :b, LOGIN = :c, SENHA = :d, TIPO_ID = :e, CARTAO = :f WHERE ID = :id');
             $stmt->execute(array(
                 ':id' => $ID,
                 ':a' => $requestData['NOME'],
                 ':b' => $requestData['CELULAR'],
                 ':c' => $requestData['LOGIN'],
                 ':d' => ($requestData['SENHA']),
-                ':e' => $requestData['TIPO_ID']
+                ':e' => $requestData['TIPO_ID'],
+                ':f' => $requestData['CARTAO_ID']
             ));
             $dados = array(
                 "tipo" => 'success',

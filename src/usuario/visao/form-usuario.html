@@ -5,7 +5,7 @@
     </div>
     <div class="form-group">
         <label>Celular</label>
-        <input type="tel" name="CELULAR" id="CELULAR" class="form-control">
+        <input type="tel" name="CELULAR" id="CELULAR" class="form-control" maxlength="14">
     </div>
     <div class="form-group">
         <label>Login</label>
@@ -13,12 +13,18 @@
     </div>
     <div class="form-group">
         <label>Senha</label>
-        <input type="password" name="SENHA" id="SENHA" class="form-control">
+        <input type="password" name="SENHA" id="SENHA" class="form-control" maxlength="18">
     </div>
     <div class="form-group">
         <label>Tipo de acesso</label>
         <select name="TIPO_ID" id="TIPO_ID" class="form-control">
             <option value="">Selecione o tipo de acesso</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>UID do cartão</label>
+        <select name="CARTAO_ID" id="CARTAO_ID" class="form-control">  
+            <option value="">Selecione o UID do cartão</option>
         </select>
     </div>
     <input type="hidden" name="ID" id="ID">

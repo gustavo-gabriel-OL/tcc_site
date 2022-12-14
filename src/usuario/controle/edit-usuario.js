@@ -22,14 +22,6 @@ $(document).ready(function() {
             success: function(dado) {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/usuario/visao/form-usuario.html', function() {
-                        $('#NOME').val(dado.dados.NOME)
-                        $('#CELULAR').val(dado.dados.CELULAR)
-                        $('#LOGIN').val(dado.dados.LOGIN)
-                        $('#SENHA').val(dado.dados.SENHA)
-                        $('#TIPO_ID').empty()
-                        $('#ID').val(dado.dados.ID)
-
-                        var TIPO_ID = dado.dados.TIPO_ID
 
                         //Consultar todos os tipos cadastrados no banco de dados
                         $.ajax({
@@ -48,7 +40,36 @@ $(document).ready(function() {
                                 }
                             }
                         })
+                        //Consultar todos os cartões cadastrados no banco de dados
+                        $.ajax({
+                            dataType: 'json',
+                            type: 'POST',
+                            assync: true,
+                            url: 'src/tipo/cartao/cartao-sem-usuario.php',
+                            success: function(dados) {
+                                for (const result of dados) {
+                                    if (result.ID == CARTAO_UID) {
+                                        $('#CARTAO_UID').append(`<option value="${result.UID}" selected>${result.UID}</option>`)
+                                    } else {
+                                        $('#CARTAO_UID').append(`<option value="${result.UID}">${result.UID}</option>`)
+                                    }
+
+                                }
+                            }
+                        })
                     })
+
+                        $('#NOME').val(dado.dados.NOME)
+                        $('#CELULAR').val(dado.dados.CELULAR)
+                        $('#LOGIN').val(dado.dados.LOGIN)
+                        $('#SENHA').val(dado.dados.SENHA)
+                        $('#TIPO_ID').val(dado.dados.TIPO_ID)
+                        $('#CARTAO_ID').val(dado.dados.CARTAO_UID)
+                        $('#ID').val(dado.dados.ID)
+
+                        var TIPO_ID = dado.dados.TIPO_ID
+                        var CARTAO_UID = dado.dados.CARTAO_UID
+
                     $('.btn-save').removeAttr('data-operation', 'insert')
                     $('.btn-save').show()
                     $('#modal-usuario').modal('show')
